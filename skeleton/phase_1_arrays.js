@@ -24,3 +24,16 @@ Array.prototype.twoSum = function() {
 
     return output;
 }
+
+Array.prototype.transpose = function() {
+    let output = [];
+
+    for (let i = 0; i < this.length; i++) {
+        let row = [];
+        for (let j = 0; j < this.length; j++) {
+            row.push(this[j][i])
+        }
+        output.push(row)
+    }
+    return output
+}
