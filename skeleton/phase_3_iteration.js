@@ -17,3 +17,21 @@ Array.prototype.bubbleSort = function() {
     }
     return false
 }
+
+
+String.prototype.substrings = function() {
+    let output = []
+
+    for(let i = 0; i < this.length; i++) {
+        for(let j = i + 1; j <= this.length; j++) {
+            output.push(this.slice(i, j))
+        }
+
+    }
+
+    return output;
+}
+
+// mlkz.substring => ['m', 'ml', 'mlk', 'mlkz', 'lkz' ']
+// 'foo'.substring => ['f', 'fo', 'foo', 'oo', 'o']
+                    //  ['', 'f', 'fo', '', 'o', '']
