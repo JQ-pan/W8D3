@@ -4,9 +4,11 @@ Array.prototype.myEach = function(callback) {
     }
 }
 
-Array.prototype.myMap = function(callback) {
+Array.prototype.myMap = function() {
     let output = this.slice()
-    output.myEach(callback)
-    return output
+    return function(callback) {
+        output.myEach(callback)
+        return output
+    }
 }
 
