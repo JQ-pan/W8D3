@@ -12,3 +12,13 @@ Array.prototype.myMap = function() {
     }
 }
 
+Array.prototype.myReduce = function(callback, initialValue=null) {
+  if (initialValue === null) {
+    initialValue = this.shift();
+  }
+
+  this.myEach((el) => initialValue = callback(initialValue, el))
+
+  return initialValue;
+}
+
